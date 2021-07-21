@@ -40,6 +40,7 @@ import axios from 'axios';
 
   return (
     <div>
+      
         <NavBar
           user={user} setUser={setUser}
           hardrows={hardrows} setHardrows={setHardrows}
@@ -49,6 +50,7 @@ import axios from 'axios';
           hardrows={hardrows} setHardrows={setHardrows}
           softrows={softrows} setSoftrows={setSoftrows}
         /> */}
+
     </div>
   );
 }
