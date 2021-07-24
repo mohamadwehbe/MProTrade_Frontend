@@ -7,6 +7,8 @@ import ContactAlert from './ContactAlert';
 
 function Contact(props) {
 
+    const id = localStorage.getItem("id")
+
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [question,setQuestion] = useState('');
@@ -20,6 +22,7 @@ function Contact(props) {
         }
         else {
             const data = {
+                customer_id:id,
                 name:name,
                 email:email,
                 question:question,
