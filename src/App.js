@@ -54,15 +54,15 @@ import axios from 'axios';
   return (
     <div>
       
-        <NavBar
+        {/* <NavBar
           user={user} setUser={setUser}
           hardrows={hardrows} setHardrows={setHardrows}
           softrows={softrows} setSoftrows={setSoftrows}
-        />
-        {/* <Admin
+        /> */}
+        <Admin
           hardrows={hardrows} setHardrows={setHardrows}
           softrows={softrows} setSoftrows={setSoftrows}
-        /> */}
+        />
 
     </div>
   );

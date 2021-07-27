@@ -1,12 +1,30 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Badge from '@material-ui/core/Badge';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Button } from '@material-ui/core';
+import axios from 'axios';
 
 function Dropdown1(props) {
   const [nb,setNb] = useState(1)
+
+  const [rows,setRows] = useState([])
+
+  const not = ()=> {
+
+    axios.get(`http://127.0.0.1:8000/api/listnot`).then(res => {
+      setRows(res.data)
+    })
+    .catch(err => {
+        console.log(err, 'Failed to add request')
+    })
+  }
+
+  useEffect(()=>{
+    not()
+  },[])
+
     return (
         <>
   <Dropdown>
@@ -19,17 +37,19 @@ function Dropdown1(props) {
     </Dropdown.Toggle>
 
     <Dropdown.Menu>
-      <Dropdown.Item style={{textDecoration:'none'}} onClick={()=>{setNb(0)}}>
+    {rows.map((row) => (
+      <Dropdown.Item key={row.id} style={{textDecoration:'none'}} onClick={()=>{setNb(0)}}>
         <p style={{ color:'white',fontSize:18,fontWeight:500,
                     border:'1px solid white',borderRadius:50,
                     paddingTop:45,padding:20,backgroundColor:"black"}}>
-            Mohamad Wehbe wants to sell an acroname network routing switch.
+            {row.firstname} {row.lastname} wants to sell a {row.notification}
             <div style={{display:'flex',flexDirection:'row'}}>
             <p style={{fontWeight:600,borderRadius:50,backgroundColor:'white',color:'black',padding:10}}>Accept</p>
             <p style={{fontWeight:600,borderRadius:50,backgroundColor:'white',color:'black',padding:10,marginLeft:10}}>Reject</p>
             </div>
         </p>
       </Dropdown.Item>
+      ))}
       </Dropdown.Menu>
   </Dropdown>
 </>
