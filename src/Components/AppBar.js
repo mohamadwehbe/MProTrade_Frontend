@@ -189,20 +189,7 @@ export default function PrimarySearchAppBar({user,setUser,product,setproduct,nb}
                         )
                         : (
                           <ul style={{display:'flex',flexDirection:'row',alignItems:'center',listStyle:'none'}}>
-                            {/* <li>
-                            <IconButton aria-label="show 4 new mails" color="inherit">
-                              <Badge badgeContent={4} color="secondary">
-                                <MailIcon />
-                              </Badge>
-                            </IconButton>
-                            </li>
-                            <li>
-                            <IconButton aria-label="show 17 new notifications" color="inherit">
-                              <Badge badgeContent={17} color="secondary">
-                                <NotificationsIcon />
-                              </Badge>
-                            </IconButton>
-                            </li> */}
+
                             <li>
                             <IconButton
                               edge="end"

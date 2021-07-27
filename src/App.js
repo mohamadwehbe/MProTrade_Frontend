@@ -2,23 +2,9 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 import NavBar from './Components/NavBar';
 import Admin from './Components/Admin';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
   function App() {
-
-  // const history = useHistory();
-
-  // const id = localStorage.getItem("id")
-
-  // useEffect(()=>{
-  //   if(!id) {
-  //     history.push('/login')
-  //   }
-  //   else {
-  //     history.push('/home')
-  //   }
-  // },[id])
 
   const [hardrows, setHardrows] = useState([])
 
@@ -53,17 +39,15 @@ import axios from 'axios';
 
   return (
     <div>
-      
-        {/* <NavBar
+        <NavBar
           user={user} setUser={setUser}
           hardrows={hardrows} setHardrows={setHardrows}
           softrows={softrows} setSoftrows={setSoftrows}
-        /> */}
-        <Admin
+        />
+        {/* <Admin
           hardrows={hardrows} setHardrows={setHardrows}
           softrows={softrows} setSoftrows={setSoftrows}
-        />
-
+        /> */}
     </div>
   );
 }
