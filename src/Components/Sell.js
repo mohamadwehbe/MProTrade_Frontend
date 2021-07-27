@@ -87,12 +87,29 @@ function Sell(props) {
         }
     },[added])
 
+    const sendNotification = (e)=> {
+        e.preventDefault();
+        const not = name + ' ' + description + ' for $' + price
+
+        const fd = new FormData();
+            fd.append('customer_id',id);
+            fd.append('name',name);
+            fd.append('notification',not);
+
+            axios.post(`http://127.0.0.1:8000/api/addnot`, fd).then(res => {
+                console.log(res.data)
+            }).catch(err => {
+                console.log(err, 'Failed to add request')
+            })
+    }
+
     const addProduct = (e)=>{
         console.log('category',radioCheck)
         if(radioCheck === 'software')
             addSoftProductHandler(e)
         if(radioCheck === 'hardware')
             addHardProductHandler(e)
+        sendNotification(e)
     }
 
     return (

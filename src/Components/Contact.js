@@ -4,6 +4,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ContactAlert from './ContactAlert';
+import axios from 'axios';
 
 function Contact(props) {
 
@@ -21,15 +22,16 @@ function Contact(props) {
             alert("Please fill in all fields")
         }
         else {
-            const data = {
-                customer_id:id,
-                name:name,
-                email:email,
-                question:question,
-                radioCheck:radioCheck
-            }
+            const fd = new FormData();
+            fd.append('name',name)
+            fd.append('email',email)
+            fd.append('question',question)
+            axios.post(`http://127.0.0.1:8000/api/addmsg`, fd).then(res => {
+            console.log(res.data)
             setSubmitted(true)
-            console.log(data)
+        }).catch(err => {
+            console.log(err, 'Failed to add request')
+        })
         }
     }
 
