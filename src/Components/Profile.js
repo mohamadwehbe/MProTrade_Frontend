@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import profile from '../images/profile.svg';

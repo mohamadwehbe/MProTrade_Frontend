@@ -1,6 +1,5 @@
-import { Button, TextField, OutlinedInput, InputAdornment, InputLabel } from '@material-ui/core';
+import { TextField, OutlinedInput, InputAdornment, InputLabel } from '@material-ui/core';
 import React, {useEffect,useState} from 'react';
-import ProductSwiper from './ProductSwiper';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import trans from '../images/transaction.svg';

@@ -1,8 +1,6 @@
 import React from 'react';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
 import logimg1 from '../images/secure.svg';
 import SignUpForm from './SignUpForm';
-import { Link } from 'react-router-dom';
 
 function SignUp({user,setUser}) {
   return (

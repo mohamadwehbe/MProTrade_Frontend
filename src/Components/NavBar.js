@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import axios from 'axios';
 import HomePage from './HomePage';
 import SignUp from './SignUp';
 import Sell from './Sell';
@@ -19,30 +18,6 @@ export default function NavBar({
     const [nb,setNb] = useState(0);
     const [product,setproduct] = useState("");
     const [prorow,setProrow] = useState({});
-
-    // const addhardcart = (rowID)=> {
-    //     const fd = new FormData();
-    //     fd.append('customer_id',id);
-    //     fd.append('hardware_id',rowID);
-
-    //     axios.post(`http://127.0.0.1:8000/api/addhardcart`, fd).then(res => {
-    //         console.log(res.data)
-    //     }).catch(err => {
-    //         console.log(err, 'Failed to add request')
-    //     })
-    // }
-
-    // const addsoftcart = (rowID)=> {
-    //     const fd = new FormData();
-    //     fd.append('customer_id',id);
-    //     fd.append('software_id',rowID);
-
-    //     axios.post(`http://127.0.0.1:8000/api/addsoftcart`, fd).then(res => {
-    //         console.log(res.data)
-    //     }).catch(err => {
-    //         console.log(err, 'Failed to add request')
-    //     })
-    // }
 
     return (
         <div style={{width:"100%"}}>

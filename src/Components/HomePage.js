@@ -1,8 +1,6 @@
-import React ,{useEffect,useState} from 'react';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
+import React ,{useEffect} from 'react';
 import logimg from '../images/signpic.svg';
-import CardSwiper from './CardSwiper';
-import {Link, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Album from './Admin/Album';
 function HomePage({
     hardrows,
